@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es" prefix="dc: http://purl.org/dc/elements/1.1/">
+<head>
+    <meta name="author" content="Created with Masher by Half-Baked Software, registered to Alejandro."/>
+    <meta name="keywords" content="Masher, Hot Potatoes, Half-Baked Software, Windows, University of Victoria"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Índice de actividades - HotPotatoes</title>
+
+    <!-- Estilos originales mejorados -->
+    <style>
+        /* ===== VARIABLES (manteniendo las originales + más opciones) ===== */
+        :root {
+            /* Colores HotPotatoes originales */
+            --strFontFace: 'Segoe UI', 'Roboto', arial, helvetica, sans-serif;
+            --strFontSize: 1rem;
+            --strTextColor: #1e2a3e;
+            --strTitleColor: #0c4a6e;
+            --strLinkColor: #2563eb;
+            --strVLinkColor: #7c3aed;
+            --strPageBGColor: #f8fafc;
+            --strExBGColor: #ffffff;
+            
+            /* Nuevos colores para diseño moderno */
+            --header-bg: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            --footer-bg: #0f172a;
+            --card-shadow: 0 20px 25px -12px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.02);
+            --border-radius: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--strFontFace);
+            background-color: var(--strPageBGColor);
+            color: var(--strTextColor);
+            margin: 0;
+            padding: 0;
+            font-size: var(--strFontSize);
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== NUEVO ENCABEZADO CON IMAGEN ===== */
+        .custom-header {
+            background: var(--header-bg);
+            padding: 1rem 5%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-bottom: 3px solid #facc15;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .logo-area {
+            flex-shrink: 0;
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 0.5rem 1rem;
+            backdrop-filter: blur(4px);
+            transition: transform 0.2s ease;
+        }
+
+        .logo-area:hover {
+            transform: scale(1.02);
+        }
+
+        .logo-area img {
+            max-height: 80px;
+            width: auto;
+            display: block;
+            border-radius: 12px;
+        }
+
+        /* Placeholder elegante si no hay imagen */
+        .image-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1.2rem;
+            border-radius: 60px;
+            color: white;
+            font-weight: 500;
+        }
+
+        .image-placeholder svg {
+            width: 32px;
+            height: 32px;
+            fill: #facc15;
+        }
+
+        .header-title {
+            color: white;
+            text-align: right;
+        }
+
+        .header-title h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .header-title p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* ===== CONTENIDO PRINCIPAL ===== */
+        .main-content {
+            flex: 1;
+            padding: 2rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        div.Titles {
+            padding: 1rem 0.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .ExerciseTitle {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0c4a6e, #2dd4bf);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tarjeta del índice */
+        div.IndexDiv {
+            margin: 1rem auto;
+            padding: 2rem;
+            border: none;
+            border-radius: var(--border-radius);
+            background: var(--strExBGColor);
+            box-shadow: var(--card-shadow);
+            width: 100%;
+            max-width: 800px;
+            transition: all 0.3s ease;
+        }
+
+        .Index {
+            text-align: left;
+            font-size: 1.05rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.Index li {
+            margin: 1rem 0;
+            padding: 0.5rem 1rem;
+            background: #f1f5f9;
+            border-radius: 60px;
+            transition: all 0.2s ease;
+            border-left: 4px solid #facc15;
+        }
+
+        ul.Index li:hover {
+            background: #e6f0ff;
+            transform: translateX(6px);
+            border-left-color: #2563eb;
+        }
+
+        ul.Index li a {
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            width: 100%;
+        }
+
+        /* estilo para separadores visuales */
+        .Index li br {
+            display: none;
+        }
+
+        /* arreglo de texto sobrante */
+        ul.Index li {
+            word-break: break-word;
+        }
+
+        a {
+            color: var(--strLinkColor);
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #f97316;
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: var(--strVLinkColor);
+        }
+
+        /* ===== NUEVO FOOTER ===== */
+        .custom-footer {
+            background: var(--footer-bg);
+            color: #cbd5e1;
+            padding: 1.5rem 5%;
+            margin-top: 3rem;
+            border-top: 1px solid #334155;
+            font-size: 0.85rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-copyright {
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #facc15;
+        }
+
+        .footer-credit {
+            font-size: 0.75rem;
+            opacity: 0.6;
+        }
+
+        /* Botón de navegación (original, lo dejamos pero con estilo) */
+        .NavButtonBar {
+            background: transparent;
+            text-align: right;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-title {
+                text-align: center;
+            }
+            div.IndexDiv {
+                padding: 1.5rem;
+                width: 95%;
+            }
+            ul.Index li {
+                font-size: 0.9rem;
+            }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== NUEVA CABECERA CON IMAGEN ========== -->
+<header class="custom-header">
+    <div class="header-container">
+        <div class="logo-area">
+            <!-- Puedes reemplazar esta imagen con tu propio recurso -->
+            <!-- Si no tienes imagen, se muestra un placeholder bonito con ícono -->
+            <!-- <div id="imageContainer" class="image-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 8h-4v4h-4v-4H6V9h4V5h4v4h4v2z" fill="#facc15"/>
+                </svg>
+                <span>Espacio para tu imagen</span>
+            </div>
+             Ejemplo: si deseas usar una imagen real, descomenta la línea siguiente y comenta el div de arriba -->
+             <img src="..\Users\Usuario\Pictures\WhatsApp Image 2026-04-26 at 10.31.11 PM.jpeg" alt="Logo o imagen institucional"> 
+        </div>
+        <div class="header-title">
+            <h1>Unidad II: Implementación y Mantenimiento de Software</h1>
+        </div>
+    </div>
+</header>
+
+<div class="NavButtonBar">🏠 Inicio · Índice de ejercicios</div>
+
+<main class="main-content">
+    <div class="Titles">
+        <h2 class="ExerciseTitle">🎯 Elige una actividad para comenzar</h2>
+    </div>
+
+    <div style="text-align: center;">
+        <div class="IndexDiv">
+            <ul class="Index">
+                <li><a href="Crucigrama de ISW2.htm">🧩 Crucigrama</a></li>
+                <li><a href="MatchISW2.htm">🔗 Unir la palabra</a></li>
+                 <li><a href="Ordenar1.htm">📖 Ordena la oración 1</a></li>
+				<li><a href="Ordena2.htm">📝 Ordena la oración 2</a></li>
+                <li><a href="Ordenar3.htm">✍️ Ordenar la oración 3</a></li>
+                <li><a href="Ordenar4.htm">🔄 Ordenar la oración 4</a></li>
+                <li><a href="Ordenar5.htm">🔁 Ordenar la oración 5</a></li>
+                <li><a href="Quiz de ISW2.htm">📋 Quiz</a></li>
+                <li><a href="Completar ISW2.htm">📌 Completa la oración</a></li>
+            </ul>
+        </div>
+    </div>
+</main>
+
+<!-- ========== NUEVO PIE DE PÁGINA ========== -->
+<footer class="custom-footer">
+    <div class="footer-container">
+        <div class="footer-copyright">
+            &copy; 2026- Manuel Alejandro Paniagua Miranda - 4T2-SIS
+        </div>
+    </div>
+</footer>
+
+<!-- pequeño script para permitir cambiar la imagen fácilmente (solo demostración) -->
+<script>
+    (function() {
+        // Si deseas que se cargue una imagen real automáticamente en lugar del placeholder,
+        // puedes modificar esta sección. Por ahora, muestra el placeholder que admite clic para explicar.
+        const imgContainer = document.getElementById('imageContainer');
+        if (imgContainer && imgContainer.classList.contains('image-placeholder')) {
+            // opcional: si quieres que al hacer clic se simule carga de imagen, solo ejemplo didáctico
+            imgContainer.style.cursor = 'pointer';
+            imgContainer.addEventListener('click', function() {
+                alert('💡 Puedes reemplazar este placeholder por una etiqueta <img> con tu propio diseño.\nEdita la sección .logo-area en el HTML.');
+            });
+        }
+        
+        // --- Mejora de títulos vacíos (si el ExerciseTitle no tiene texto, ponemos uno por defecto)
+        const titleElem = document.querySelector('.ExerciseTitle');
+        if (titleElem && (!titleElem.innerText || titleElem.innerText.trim() === "")) {
+            // No sobreescribimos si el usuario ya puso algo desde HotPotatoes
+            if(titleElem.innerText.trim() === "") {
+                titleElem.innerText = "Actividades Interactivas";
+            }
+        }
+        
+        // Arreglar posibles espacios extra en los enlaces por br's
+        // (solo limpieza visual, pero ya los hemos listado manualmente)
+        console.log("Index personalizado con imagen y footer cargado correctamente");
+    })();
+</script>
+
+</body>
+</html>
